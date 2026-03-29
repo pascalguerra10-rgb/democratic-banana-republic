@@ -1,222 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Democratic Banana Republic</title>
-
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: #f4f4f4;
+      color: #222;
     }
-
     header {
       background: #f7c600;
-      padding: 20px;
+      color: #4b3600;
+      padding: 28px 20px;
       text-align: center;
+      border-bottom: 4px solid #333;
     }
-
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin: 8px 0 0;
+      font-size: 1rem;
+    }
     nav {
       background: #333;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      gap: 0;
     }
-
-    nav a {
+    nav button {
+      background: transparent;
       color: white;
-      padding: 14px 20px;
+      border: none;
+      padding: 14px 18px;
       cursor: pointer;
-      text-decoration: none;
+      font-size: 0.95rem;
     }
-
-    nav a:hover {
+    nav button:hover,
+    nav button.active-nav {
       background: #575757;
     }
-
-    section {
-      display: none;
-      padding: 40px;
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
     }
-
-    section.active {
+    .page-section {
+      display: none;
+    }
+    .page-section.active {
       display: block;
     }
-
     .card {
       background: white;
       padding: 20px;
-      margin: 10px 0;
-      border-radius: 10px;
+      margin: 0 0 18px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
-
-    button {
-      padding: 10px;
-      margin-top: 10px;
-      background: #f7c600;
-      border: none;
-      cursor: pointer;
+    h2, h3 {
+      margin-top: 0;
     }
-
+    ul {
+      padding-left: 20px;
+    }
     input, textarea {
       width: 100%;
-      padding: 8px;
-      margin: 5px 0;
+      padding: 10px;
+      margin: 6px 0 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font: inherit;
+    }
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+    .action-btn {
+      background: #f7c600;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .action-btn:hover {
+      background: #e5b800;
+    }
+    .vote-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .muted {
+      color: #666;
+      font-size: 0.95rem;
+    }
+    .appeal-preview {
+      background: #faf7e8;
+      border: 1px solid #e6d88f;
+      padding: 14px;
+      border-radius: 10px;
+      margin-top: 14px;
+      white-space: pre-line;
     }
   </style>
 </head>
-
 <body>
+  <header>
+    <h1>Democratic Banana Republic 🍌</h1>
+    <p>Official Website of the Group Chat Nation</p>
+  </header>
 
-<header>
-  <h1>Democratic Banana Republic 🍌</h1>
-</header>
+  <nav>
+    <button type="button" data-section="home" class="active-nav">Home</button>
+    <button type="button" data-section="members">Members</button>
+    <button type="button" data-section="hierarchy">Hierarchy</button>
+    <button type="button" data-section="bans">Bans & Appeals</button>
+    <button type="button" data-section="vote">Voting</button>
+    <button type="button" data-section="constitution">Constitution</button>
+  </nav>
 
-<nav>
-  <a onclick="showSection('home')">Home</a>
-  <a onclick="showSection('members')">Members</a>
-  <a onclick="showSection('hierarchy')">Hierarchy</a>
-  <a onclick="showSection('bans')">Bans & Appeals</a>
-  <a onclick="showSection('vote')">Voting</a>
-  <a onclick="showSection('constitution')">Constitution</a>
-</nav>
+  <main>
+    <section id="home" class="page-section active">
+      <div class="card">
+        <h2>Welcome</h2>
+        <p>Welcome to the official website of the Democratic Banana Republic.</p>
+      </div>
 
-<section id="home" class="active">
+      <div class="card">
+        <h2>Background and History:</h2>
+        <p>The Democratic Banana Republic was not always a democracy. In its early days, it was ruled under Pascal’s original regime, a chaotic and highly questionable fascist-style government that left little room for fairness or input from others. Over time, dissatisfaction grew among the members, particularly Andrei and Emmett, who recognized the need for change. Refusing to accept the status quo, they took action—organizing, challenging authority, and ultimately overthrowing the old system through sheer determination and effort.</p>
+        <p>In the aftermath, rather than removing Pascal entirely, they made a bold decision: to establish a new democratic government and place him back in charge, giving him the opportunity to prove himself as a fair and just leader. Meanwhile, Sahil notably chose to stay on the sidelines, observing events unfold rather than contributing to the revolution.</p>
+      </div>
+
+      <div class="card">
+        <h2>Comments</h2>
+        <p class="muted">This comment section uses GitHub-based comments if you set your repo name in the script.</p>
+        <script src="https://utteranc.es/client.js"
+                repo="YOUR-USERNAME/YOUR-REPO"
+                issue-term="pathname"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+      </div>
+    </section>
+
+    <section id="members" class="page-section">
+      <div class="card">
+        <h2>Members</h2>
+      </div>
+
+      <div class="card">
+        <h3>Andrei</h3>
+        <p>Plays tennis a lot, not as good as Pascal but always trying to improve, even if he never quite gets there. Amazing at math and by far the smartest in the group when it comes to math. He used to love playing Battle Cats every day during lunch. He was one of the two people who stood up to Pascal.</p>
+      </div>
+
+      <div class="card">
+        <h3>Emmett</h3>
+        <p>Loves squash and likes watching tennis, even if he is not especially good at playing it. On his good days, he somehow has an unusually great serve. He was one of the two people who stood up to Pascal.</p>
+      </div>
+
+      <div class="card">
+        <h3>Sahil</h3>
+        <p>An Indian kid who gets mad at basically everything and spends time on Reddit and Quora arguing with people for fun. He is better at tennis than Emmett, but still nowhere near Andrei or Pascal.</p>
+      </div>
+
+      <div class="card">
+        <h3>Pascal</h3>
+        <p>The best tennis player in the group and also the tallest. He has street smarts, strong leadership energy, and a history as the former fascist leader before being trusted with democratic leadership. He excels at nearly everything he does, stands out in almost every situation, and carries himself with the confidence of someone who knows he is important. He is also, according to the official legends of the Democratic Banana Republic, unbelievably great at everything and somehow gets all the girls in the world.</p>
+      </div>
+    </section>
+
+    <section id="hierarchy" class="page-section">
+      <div class="card">
+        <h2>Hierarchy</h2>
+        <p><strong>Group Chat Leader:</strong> Pascal</p>
+        <p><strong>Members:</strong> Andrei, Emmett, Sahil</p>
+      </div>
+
+      <div class="card">
+        <h3>Leader Responsibilities</h3>
+        <ul>
+          <li>Represent all members equally and listen to concerns</li>
+          <li>Review appeals fairly and without bias</li>
+          <li>Cannot issue bans without reasonable justification</li>
+          <li>Must clearly explain decisions when approving or denying appeals</li>
+          <li>Can be questioned by members about decisions</li>
+          <li>Can be replaced if leadership is unfair</li>
+          <li>Cannot abuse authority</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="bans" class="page-section">
+      <div class="card">
+        <h2>Bans & Appeals</h2>
+        <h3>Public Appeal Record</h3>
+        <p>These appeals are visible to everyone on the website only when they are manually added to the code.</p>
+        <ul id="appealLogs">
+          <li><strong>No public appeals yet.</strong> When an appeal is officially added to the website, it will appear here for everyone to see.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Submit Appeal</h3>
+        <p><em>Instruction: After submitting your appeal, please screenshot it and send it directly to the current Group Chat Leader listed in the Hierarchy section.</em></p>
+
+        <label for="appealName">Name</label>
+        <input id="appealName" type="text" placeholder="Name" />
+
+        <label for="appealDate">Date of Ban</label>
+        <input id="appealDate" type="date" />
+
+        <label for="appealDuration">How long is the ban?</label>
+        <input id="appealDuration" type="text" placeholder="Ban length" />
+
+        <label for="appealReason">Reason for appeal</label>
+        <textarea id="appealReason" placeholder="Why should the ban be reconsidered?"></textarea>
+
+        <button type="button" class="action-btn" id="submitAppealBtn">Submit Appeal</button>
+
+        <div id="appealPreview" class="appeal-preview" style="display:none;"></div>
+      </div>
+    </section>
+
+    <section id="vote" class="page-section">
+      <div class="card">
+        <h2>Vote to Replace Leader</h2>
+        <p>Should Pascal remain leader?</p>
+        <div class="vote-buttons">
+          <button type="button" class="action-btn" id="voteYesBtn">Yes</button>
+          <button type="button" class="action-btn" id="voteNoBtn">No</button>
+        </div>
+        <p id="results" class="appeal-preview" style="margin-top:14px;">Yes: 0 | No: 0</p>
+        <p class="muted">Only one vote is allowed per device/browser in this version.</p>
+      </div>
+    </section>
+
+    <section id="constitution">
   <div class="card">
-    <h2>Welcome</h2>
-    <p>Welcome to the official website of the Democratic Banana Republic 🍌</p>
-  </div>
+    <h2>The Constitution of the Banana Group Chat</h2>
 
-  <div class="card">
-    <h2>Background and History:</h2>
-    <p>The Democratic Banana Republic was not always a democracy. In its early days, it was ruled under Pascal’s original regime, a chaotic and highly questionable fascist-style government that left little room for fairness or input from others. Over time, dissatisfaction grew among the members, particularly Andrei and Emmett, who recognized the need for change. Refusing to accept the status quo, they took action—organizing, challenging authority, and ultimately overthrowing the old system through sheer determination and effort.</p>
+    <h3>Preamble</h3>
+    <p>We, the members of the <em>Banana Group Chat</em>—Sahil, Andrei, Pascal, and Emmett—in order to establish fairness, ensure mutual respect, promote good vibes, and secure liberty from unnecessary chaos, do hereby ordain and establish this Constitution.</p>
 
-    <p>In the aftermath, rather than removing Pascal entirely, they made a bold decision: to establish a new democratic government and place him back in charge, giving him the opportunity to prove himself as a fair and just leader. Meanwhile, Sahil notably chose to stay on the sidelines, observing events unfold rather than contributing to the revolution.</p>
-  </div>
+    <hr>
 
-  <div class="card">
-    <h2>Comments</h2>
-    <script src="https://utteranc.es/client.js"
-      repo="YOUR-USERNAME/YOUR-REPO"
-      issue-term="pathname"
-      theme="github-light"
-      crossorigin="anonymous"
-      async>
-    </script>
+    <h3>Article I: Equality of Members</h3>
+    <p>All members of the Banana Group Chat—Sahil, Andrei, Pascal, and Emmett—shall be equal. No individual shall hold more inherent power, authority, or privilege over another. Each voice carries equal weight.</p>
+
+    <hr>
+
+    <h3>Article II: Freedom of Expression</h3>
+    <p>Every member has the right to speak, meme, react, and contribute freely, provided it does not cross into disrespect, excessive spam, or intentional disruption of peace.</p>
+
+    <hr>
+
+    <h3>Article III: The End of Tyranny</h3>
+    <p>The era of unilateral control is hereby concluded. Pascal shall no longer exercise absolute authority, dominance, or unchecked decision-making power within the Banana Group Chat. Leadership, if any, shall be shared and subject to the will of all members.</p>
+
+    <hr>
+
+    <h3>Article IV: Checks and Balances</h3>
+    <p>No single member may make major decisions (such as adding or removing members, changing the group name, or spamming excessively) without the general consent of the group. Power shall remain balanced among Sahil, Andrei, Pascal, and Emmett.</p>
+
+    <hr>
+
+    <h3>Article V: Respect and Conduct</h3>
+    <p>All members shall treat one another with respect. Disagreements may occur, but personal attacks, harassment, or unnecessary hostility are prohibited.</p>
+
+    <hr>
+
+    <h3>Article VI: Amendments</h3>
+    <p>This Constitution may be amended if at least three of the four members agree. Any member may propose changes for the betterment of the group.</p>
+
+    <hr>
+
+    <h3>Article VII: Enforcement</h3>
+    <p>If any member violates these principles, the group may collectively address the issue and take fair and reasonable action.</p>
+
+    <hr>
+
+    <h3>Conclusion</h3>
+    <p>With this Constitution, the Banana Group Chat enters a new era of equality, shared power, and good energy. No longer ruled by one, but governed by all.</p>
+
+    <p><em>Signed,<br>
+    Sahil, Andrei, Pascal, and Emmett<br>
+    Members of the Banana Group Chat</em></p>
   </div>
 </section>
+  </main>
 
-<section id="members">
-  <div class="card">
-    <h3>Andrei</h3>
-    <p>Plays tennis a lot, not as good as Pascal but always trying to improve. Amazing at math and smartest in the group. One of the two who stood up to Pascal.</p>
-  </div>
+  <script>
+    const navButtons = document.querySelectorAll('nav button');
+    const sections = document.querySelectorAll('.page-section');
 
-  <div class="card">
-    <h3>Emmett</h3>
-    <p>Loves squash and watching tennis. Has a great serve on his good days. One of the two who stood up to Pascal.</p>
-  </div>
+    function showSection(sectionId) {
+      sections.forEach(section => section.classList.remove('active'));
+      navButtons.forEach(button => button.classList.remove('active-nav'));
 
-  <div class="card">
-    <h3>Sahil</h3>
-    <p>Gets mad at everything and argues online for fun. Better than Emmett, but far behind Andrei and Pascal.</p>
-  </div>
+      const targetSection = document.getElementById(sectionId);
+      const targetButton = document.querySelector(`nav button[data-section="${sectionId}"]`);
 
-  <div class="card">
-    <h3>Pascal</h3>
-    <p>Best tennis player, tallest, elite at everything, former leader now proving himself again.</p>
-  </div>
-</section>
+      if (targetSection) targetSection.classList.add('active');
+      if (targetButton) targetButton.classList.add('active-nav');
+    }
 
-<section id="hierarchy">
-  <div class="card">
-    <p><strong>Group Chat Leader:</strong> Pascal</p>
-    <p><strong>Members:</strong> Andrei, Emmett, Sahil</p>
-  </div>
+    navButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        showSection(this.dataset.section);
+      });
+    });
 
-  <div class="card">
-    <h3>Leader Responsibilities</h3>
-    <ul>
-      <li>Represent all members equally</li>
-      <li>Review appeals fairly</li>
-      <li>No bans without reason</li>
-      <li>Explain decisions</li>
-      <li>Can be questioned</li>
-      <li>Can be replaced</li>
-      <li>No abuse of power</li>
-    </ul>
-  </div>
-</section>
+    const voteStorageKey = 'dbr_vote_choice';
+    const savedVoteChoice = localStorage.getItem(voteStorageKey);
+    const voteYesBtn = document.getElementById('voteYesBtn');
+    const voteNoBtn = document.getElementById('voteNoBtn');
+    const resultsEl = document.getElementById('results');
 
-<section id="bans">
-  <div class="card">
-    <h3>Submit Appeal</h3>
-    <p><em>After submitting, screenshot and send to leader. You can find out who that is in the Hierarchy section.</em></p>
+    let yesVotes = 0;
+    let noVotes = 0;
 
-    <input id="name" placeholder="Name">
-    <input type="date" id="date">
-    <input id="duration" placeholder="Ban Length">
-    <textarea id="reason" placeholder="Reason"></textarea>
+    function updateVoteDisplay() {
+      if (savedVoteChoice === 'yes') yesVotes = 1;
+      if (savedVoteChoice === 'no') noVotes = 1;
+      resultsEl.textContent = `Yes: ${yesVotes} | No: ${noVotes}`;
 
-    <button onclick="submitAppeal()">Submit</button>
+      if (savedVoteChoice) {
+        voteYesBtn.disabled = true;
+        voteNoBtn.disabled = true;
+      }
+    }
 
-    <div id="preview"></div>
-  </div>
-</section>
+    voteYesBtn.addEventListener('click', function () {
+      if (localStorage.getItem(voteStorageKey)) {
+        alert('You have already voted. Only one vote is allowed per device.');
+        return;
+      }
+      localStorage.setItem(voteStorageKey, 'yes');
+      yesVotes = 1;
+      noVotes = 0;
+      updateVoteDisplay();
+    });
 
-<section id="vote">
-  <div class="card">
-    <h2>Vote to Replace Leader</h2>
-    <button onclick="vote('yes')">Yes</button>
-    <button onclick="vote('no')">No</button>
-    <p id="results">Yes: 0 | No: 0</p>
-  </div>
-</section>
+    voteNoBtn.addEventListener('click', function () {
+      if (localStorage.getItem(voteStorageKey)) {
+        alert('You have already voted. Only one vote is allowed per device.');
+        return;
+      }
+      localStorage.setItem(voteStorageKey, 'no');
+      yesVotes = 0;
+      noVotes = 1;
+      updateVoteDisplay();
+    });
 
-<section id="constitution">
-  <div class="card">
-    <h2>Constitution</h2>
-    <ul>
-      <li>All members are equal</li>
-      <li>Leader must act fairly</li>
-      <li>Appeals must be reviewed</li>
-      <li>Leader can be replaced</li>
-      <li>No abuse of power</li>
-    </ul>
-  </div>
-</section>
+    updateVoteDisplay();
 
-<script>
-function showSection(id){
-  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
+    const submitAppealBtn = document.getElementById('submitAppealBtn');
+    const appealPreview = document.getElementById('appealPreview');
 
-let voted = localStorage.getItem("voted");
+    submitAppealBtn.addEventListener('click', function () {
+      const name = document.getElementById('appealName').value.trim();
+      const date = document.getElementById('appealDate').value.trim();
+      const duration = document.getElementById('appealDuration').value.trim();
+      const reason = document.getElementById('appealReason').value.trim();
 
-function vote(v){
-  if(voted){
-    alert("You already voted");
-    return;
-  }
+      if (!name || !date || !duration || !reason) {
+        alert('Please fill out all fields before submitting your appeal.');
+        return;
+      }
 
-  voted = true;
-  localStorage.setItem("voted", true);
-
-  if(v === "yes") document.getElementById("results").innerText = "Yes: 1 | No: 0";
-  if(v === "no") document.getElementById("results").innerText = "Yes: 0 | No: 1";
-}
-
-function submitAppeal(){
-  let text =
-    "Name: " + name.value + "\n" +
-    "Date: " + date.value + "\n" +
-    "Length: " + duration.value + "\n" +
-    "Reason: " + reason.value;
-
-  preview.innerText = text + "\n\nScreenshot and send to leader.";
-}
-</script>
-
+      appealPreview.style.display = 'block';
+      appealPreview.textContent =
+        'Appeal Submitted\n\n' +
+        'Name: ' + name + '\n' +
+        'Date of Ban: ' + date + '\n' +
+        'Ban Length: ' + duration + '\n' +
+        'Reason for Appeal: ' + reason + '\n\n' +
+        'Now screenshot this and send it directly to the current Group Chat Leader.';
+    });
+  </script>
 </body>
 </html>
