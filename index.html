@@ -59,10 +59,22 @@
 
 <section id="members">
   <h2>Members</h2>
-  <div class="card"><h3>Andrei</h3><p>Math genius, tennis grinder.</p></div>
-  <div class="card"><h3>Emmett</h3><p>Squash lover, clutch serve.</p></div>
-  <div class="card"><h3>Sahil</h3><p>Professional arguer.</p></div>
-  <div class="card"><h3>Pascal</h3><p>Leader. Elite. Obviously.</p></div>
+  <div class="card">
+    <h3>Andrei</h3>
+    <p>Plays tennis a lot, not as good as Pascal but always trying to improve, even if he never quite gets there. Amazing at math and by far the smartest in the group when it comes to math. He used to love playing Battle Cats every day during lunch. He was one of the two people who stood up to Pascal.</p>
+  </div>
+  <div class="card">
+    <h3>Emmett</h3>
+    <p>Loves squash and likes watching tennis, even if he is not especially good at playing it. On his good days, he somehow has an unusually great serve. He was one of the two people who stood up to Pascal.</p>
+  </div>
+  <div class="card">
+    <h3>Sahil</h3>
+    <p>An Indian kid who gets mad at basically everything and spends time on Reddit and Quora arguing with people for fun. He is better at tennis than Emmett, but still nowhere near Andrei or Pascal.</p>
+  </div>
+  <div class="card">
+    <h3>Pascal</h3>
+    <p>The best tennis player in the group and also the tallest. He has street smarts, strong leadership energy, and a history as the former fascist leader before being trusted with democratic leadership. He excels at nearly everything he does, stands out in almost every situation, and carries himself with the confidence of someone who knows he is important. He is also, according to the official legends of the Democratic Banana Republic, unbelievably great at everything and somehow gets all the girls in the world.</p>
+  </div>
 </section>
 
 <section id="hierarchy">
@@ -128,9 +140,18 @@ function showSection(id){
 }
 
 let votes={yes:0,no:0};
+let hasVoted = localStorage.getItem('hasVoted') === 'true';
+
 function vote(v){
- votes[v]++;
- document.getElementById('results').innerText=`Yes: ${votes.yes} | No: ${votes.no}`;
+  if (hasVoted) {
+    alert('You have already voted. Only one vote is allowed per device.');
+    return;
+  }
+  votes[v]++;
+  hasVoted = true;
+  localStorage.setItem('hasVoted', 'true');
+  document.getElementById('results').innerText = `Yes: ${votes.yes} | No: ${votes.no}`;
+} | No: ${votes.no}`;
 }
 </script>
 
