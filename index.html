@@ -8,7 +8,7 @@
     body { margin:0; font-family:Arial; background:#f4f4f4; }
     header { background:#f7c600; padding:20px; text-align:center; }
     nav { background:#333; display:flex; justify-content:center; }
-    nav a { color:white; padding:14px; text-decoration:none; }
+    nav a { color:white; padding:14px; text-decoration:none; cursor:pointer; display:inline-block; }
     nav a:hover { background:#575757; }
     section { display:none; padding:40px; }
     section.active { display:block; }
@@ -24,12 +24,12 @@
 </header>
 
 <nav>
-  <a onclick="showSection('home')">Home</a>
-  <a onclick="showSection('members')">Members</a>
-  <a onclick="showSection('hierarchy')">Hierarchy</a>
-  <a onclick="showSection('bans')">Bans</a>
-  <a onclick="showSection('vote')">Voting</a>
-  <a onclick="showSection('constitution')">Constitution</a>
+  <a href="#" onclick="showSection('home'); return false;">Home</a>
+  <a href="#" onclick="showSection('members'); return false;">Members</a>
+  <a href="#" onclick="showSection('hierarchy'); return false;">Hierarchy</a>
+  <a href="#" onclick="showSection('bans'); return false;">Bans</a>
+  <a href="#" onclick="showSection('vote'); return false;">Voting</a>
+  <a href="#" onclick="showSection('constitution'); return false;">Constitution</a>
 </nav>
 
 <section id="home" class="active">
@@ -134,9 +134,13 @@
 </section>
 
 <script>
-function showSection(id){
- document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
- document.getElementById(id).classList.add('active');
+function showSection(id) {
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => section.classList.remove('active'));
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add('active');
+  }
 }
 
 let votes={yes:0,no:0};
