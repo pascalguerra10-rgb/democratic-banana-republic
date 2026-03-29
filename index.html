@@ -97,11 +97,15 @@
     <p>In the aftermath, rather than removing Pascal entirely, they made a bold decision: to establish a new democratic government and place him back in charge, giving him the opportunity to prove himself as a fair and just leader. Meanwhile, Sahil notably chose to stay on the sidelines, observing events unfold rather than contributing to the revolution.</p>
   </div>
   <div class="card">
-    <h2>Comments</h2>
-    <textarea id="commentInput" placeholder="Write a comment..."></textarea>
-    <button onclick="addComment()">Post Comment</button>
-    <ul id="commentList"></ul>
-  </div>
+  <h2>Comments</h2>
+  <script src="https://utteranc.es/client.js"
+          repo="pascalguerra10-rgb/democratic-banana-republic"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>
 </section>
 
 <section id="members">
@@ -169,33 +173,7 @@
     alert('Appeal submitted!');
   }
 
-  // COMMENTS SYSTEM (saved in browser)
-function addComment() {
-  const input = document.getElementById('commentInput');
-  const text = input.value.trim();
-  if (!text) return;
-
-  const comments = JSON.parse(localStorage.getItem('comments') || '[]');
-  comments.push(text);
-  localStorage.setItem('comments', JSON.stringify(comments));
-
-  input.value = '';
-  renderComments();
-}
-
-function renderComments() {
-  const list = document.getElementById('commentList');
-  list.innerHTML = '';
-
-  const comments = JSON.parse(localStorage.getItem('comments') || '[]');
-  comments.forEach(c => {
-    const li = document.createElement('li');
-    li.textContent = c;
-    list.appendChild(li);
-  });
-}
-
-window.onload = renderComments;
+  
 
 // Example banned user
   const bannedUsers = [
