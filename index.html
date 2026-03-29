@@ -151,6 +151,7 @@
 
   <div class="card">
     <h3>Submit Appeal</h3>
+    <p><em>Instruction: After submitting your appeal, please screenshot it and send it directly to the current Group Chat Leader listed in the Hierarchy section.</em></p>
     <input type="text" id="name" placeholder="Name">
     <input type="date" id="date">
     <input type="text" id="duration" placeholder="Ban Duration">
@@ -159,8 +160,11 @@
   </div>
 
   <div class="card">
-    <h3>Appeal Logs</h3>
-    <ul id="appealLogs"></ul>
+    <h3>Public Appeal Record</h3>
+    <p>These appeals are visible to everyone on the website.</p>
+    <ul id="appealLogs">
+      <li><strong>No public appeals yet.</strong> When an appeal is officially added to the website, it will appear here for everyone to see.</li>
+    </ul>
   </div>
 </section>
 
@@ -176,14 +180,7 @@
     const duration = document.getElementById('duration').value;
     const reason = document.getElementById('reason').value;
 
-    const log = `${name} | ${date} | ${duration} | ${reason}`;
-
-    const li = document.createElement('li');
-    li.textContent = log;
-
-    document.getElementById('appealLogs').appendChild(li);
-
-    alert('Appeal submitted!');
+    alert('Appeal submitted on this device only. To make it visible to everyone, the appeal must be added into the public website code.');
   }
 
   
