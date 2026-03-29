@@ -1,163 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Democratic Banana Republic</title>
   <style>
-    body { margin:0; font-family:Arial; background:#f4f4f4; }
-    header { background:#f7c600; padding:20px; text-align:center; }
-    nav { background:#333; display:flex; justify-content:center; }
-    nav a { color:white; padding:14px; text-decoration:none; cursor:pointer; display:inline-block; }
-    nav a:hover { background:#575757; }
-    section { display:none; padding:40px; }
-    section.active { display:block; }
-    .card { background:white; padding:20px; margin:10px 0; border-radius:10px; }
-    button { padding:10px; margin-top:10px; background:#f7c600; border:none; cursor:pointer; }
-    textarea, input { width:100%; margin:5px 0; padding:8px; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+    }
+    header {
+      background: #f7c600;
+      color: #4b3600;
+      padding: 28px 20px;
+      text-align: center;
+      border-bottom: 4px solid #333;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin: 8px 0 0;
+      font-size: 1rem;
+    }
+    nav {
+      background: #333;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+    }
+    nav button {
+      background: transparent;
+      color: white;
+      border: none;
+      padding: 14px 18px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    nav button:hover,
+    nav button.active-nav {
+      background: #575757;
+    }
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+    .page-section {
+      display: none;
+    }
+    .page-section.active {
+      display: block;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 0 0 18px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    h2, h3 {
+      margin-top: 0;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font: inherit;
+    }
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+    .action-btn {
+      background: #f7c600;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .action-btn:hover {
+      background: #e5b800;
+    }
+    .vote-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .muted {
+      color: #666;
+      font-size: 0.95rem;
+    }
+    .appeal-preview {
+      background: #faf7e8;
+      border: 1px solid #e6d88f;
+      padding: 14px;
+      border-radius: 10px;
+      margin-top: 14px;
+      white-space: pre-line;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Democratic Banana Republic 🍌</h1>
+    <p>Official Website of the Group Chat Nation</p>
+  </header>
 
-<header>
-  <h1>Democratic Banana Republic 🍌</h1>
-</header>
+  <nav>
+    <button type="button" data-section="home" class="active-nav">Home</button>
+    <button type="button" data-section="members">Members</button>
+    <button type="button" data-section="hierarchy">Hierarchy</button>
+    <button type="button" data-section="bans">Bans & Appeals</button>
+    <button type="button" data-section="vote">Voting</button>
+    <button type="button" data-section="constitution">Constitution</button>
+  </nav>
 
-<nav>
-  <a href="#" onclick="showSection('home'); return false;">Home</a>
-  <a href="#" onclick="showSection('members'); return false;">Members</a>
-  <a href="#" onclick="showSection('hierarchy'); return false;">Hierarchy</a>
-  <a href="#" onclick="showSection('bans'); return false;">Bans</a>
-  <a href="#" onclick="showSection('vote'); return false;">Voting</a>
-  <a href="#" onclick="showSection('constitution'); return false;">Constitution</a>
-</nav>
+  <main>
+    <section id="home" class="page-section active">
+      <div class="card">
+        <h2>Welcome</h2>
+        <p>Welcome to the official website of the Democratic Banana Republic.</p>
+      </div>
 
-<section id="home" class="active">
-  <div class="card">
-    <h2>Welcome</h2>
-    <p>Official site of the Democratic Banana Republic.</p>
-  </div>
+      <div class="card">
+        <h2>Background and History:</h2>
+        <p>The Democratic Banana Republic was not always a democracy. In its early days, it was ruled under Pascal’s original regime, a chaotic and highly questionable fascist-style government that left little room for fairness or input from others. Over time, dissatisfaction grew among the members, particularly Andrei and Emmett, who recognized the need for change. Refusing to accept the status quo, they took action—organizing, challenging authority, and ultimately overthrowing the old system through sheer determination and effort.</p>
+        <p>In the aftermath, rather than removing Pascal entirely, they made a bold decision: to establish a new democratic government and place him back in charge, giving him the opportunity to prove himself as a fair and just leader. Meanwhile, Sahil notably chose to stay on the sidelines, observing events unfold rather than contributing to the revolution.</p>
+      </div>
 
-  <div class="card">
-    <h2>Background and History:</h2>
-    <p>The Democratic Banana Republic was not always a democracy. In its early days, it was ruled under Pascal’s original regime, a chaotic and highly questionable fascist-style government that left little room for fairness or input from others. Over time, dissatisfaction grew among the members, particularly Andrei and Emmett, who recognized the need for change. Refusing to accept the status quo, they took action—organizing, challenging authority, and ultimately overthrowing the old system.</p>
+      <div class="card">
+        <h2>Comments</h2>
+        <p class="muted">This comment section uses GitHub-based comments if you set your repo name in the script.</p>
+        <script src="https://utteranc.es/client.js"
+                repo="YOUR-USERNAME/YOUR-REPO"
+                issue-term="pathname"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+      </div>
+    </section>
 
-    <p>In the aftermath, rather than removing Pascal entirely, they created a democratic system and gave him a chance to prove himself again. Meanwhile, Sahil stayed back and watched.</p>
-  </div>
+    <section id="members" class="page-section">
+      <div class="card">
+        <h2>Members</h2>
+      </div>
 
-  <div class="card">
-    <h2>Comments</h2>
-    <script src="https://utteranc.es/client.js"
-      repo="YOUR-USERNAME/YOUR-REPO"
-      issue-term="pathname"
-      theme="github-light"
-      crossorigin="anonymous"
-      async>
-    </script>
-  </div>
-</section>
+      <div class="card">
+        <h3>Andrei</h3>
+        <p>Plays tennis a lot, not as good as Pascal but always trying to improve, even if he never quite gets there. Amazing at math and by far the smartest in the group when it comes to math. He used to love playing Battle Cats every day during lunch. He was one of the two people who stood up to Pascal.</p>
+      </div>
 
-<section id="members">
-  <h2>Members</h2>
-  <div class="card">
-    <h3>Andrei</h3>
-    <p>Plays tennis a lot, not as good as Pascal but always trying to improve, even if he never quite gets there. Amazing at math and by far the smartest in the group when it comes to math. He used to love playing Battle Cats every day during lunch. He was one of the two people who stood up to Pascal.</p>
-  </div>
-  <div class="card">
-    <h3>Emmett</h3>
-    <p>Loves squash and likes watching tennis, even if he is not especially good at playing it. On his good days, he somehow has an unusually great serve. He was one of the two people who stood up to Pascal.</p>
-  </div>
-  <div class="card">
-    <h3>Sahil</h3>
-    <p>An Indian kid who gets mad at basically everything and spends time on Reddit and Quora arguing with people for fun. He is better at tennis than Emmett, but still nowhere near Andrei or Pascal.</p>
-  </div>
-  <div class="card">
-    <h3>Pascal</h3>
-    <p>The best tennis player in the group and also the tallest. He has street smarts, strong leadership energy, and a history as the former fascist leader before being trusted with democratic leadership. He excels at nearly everything he does, stands out in almost every situation, and carries himself with the confidence of someone who knows he is important. He is also, according to the official legends of the Democratic Banana Republic, unbelievably great at everything and somehow gets all the girls in the world.</p>
-  </div>
-</section>
+      <div class="card">
+        <h3>Emmett</h3>
+        <p>Loves squash and likes watching tennis, even if he is not especially good at playing it. On his good days, he somehow has an unusually great serve. He was one of the two people who stood up to Pascal.</p>
+      </div>
 
-<section id="hierarchy">
-  <h2>Hierarchy</h2>
-  <div class="card">
-    <p><strong>Leader:</strong> Pascal</p>
-    <p><strong>Members:</strong> Everyone else</p>
-  </div>
-  <div class="card">
-    <h3>Responsibilities</h3>
-    <ul>
-      <li>Represent all members equally</li>
-      <li>Review appeals fairly</li>
-      <li>No bans without reason</li>
-      <li>Explain decisions</li>
-      <li>Can be questioned</li>
-      <li>Can be replaced</li>
-      <li>No abuse of power</li>
-    </ul>
-  </div>
-</section>
+      <div class="card">
+        <h3>Sahil</h3>
+        <p>An Indian kid who gets mad at basically everything and spends time on Reddit and Quora arguing with people for fun. He is better at tennis than Emmett, but still nowhere near Andrei or Pascal.</p>
+      </div>
 
-<section id="bans">
-  <h2>Bans & Appeals</h2>
-  <div class="card">
-    <h3>Submit Appeal</h3>
-    <p><em>Screenshot and send to leader after submitting.</em></p>
-    <input placeholder="Name">
-    <input type="date">
-    <input placeholder="Ban Length">
-    <textarea placeholder="Reason"></textarea>
-    <button onclick="alert('Submitted! Screenshot and send.')">Submit</button>
-  </div>
-</section>
+      <div class="card">
+        <h3>Pascal</h3>
+        <p>The best tennis player in the group and also the tallest. He has street smarts, strong leadership energy, and a history as the former fascist leader before being trusted with democratic leadership. He excels at nearly everything he does, stands out in almost every situation, and carries himself with the confidence of someone who knows he is important. He is also, according to the official legends of the Democratic Banana Republic, unbelievably great at everything and somehow gets all the girls in the world.</p>
+      </div>
+    </section>
 
-<section id="vote">
-  <h2>Vote to Replace Leader</h2>
-  <div class="card">
-    <p>Should Pascal remain leader?</p>
-    <button onclick="vote('yes')">Yes</button>
-    <button onclick="vote('no')">No</button>
-    <p id="results"></p>
-  </div>
-</section>
+    <section id="hierarchy" class="page-section">
+      <div class="card">
+        <h2>Hierarchy</h2>
+        <p><strong>Group Chat Leader:</strong> Pascal</p>
+        <p><strong>Members:</strong> Andrei, Emmett, Sahil</p>
+      </div>
 
-<section id="constitution">
-  <h2>Constitution</h2>
-  <div class="card">
-    <ul>
-      <li>All members are equal</li>
-      <li>Leader must act fairly</li>
-      <li>Appeals must be reviewed</li>
-      <li>Leader can be replaced</li>
-      <li>No abuse of power allowed</li>
-    </ul>
-  </div>
-</section>
+      <div class="card">
+        <h3>Leader Responsibilities</h3>
+        <ul>
+          <li>Represent all members equally and listen to concerns</li>
+          <li>Review appeals fairly and without bias</li>
+          <li>Cannot issue bans without reasonable justification</li>
+          <li>Must clearly explain decisions when approving or denying appeals</li>
+          <li>Can be questioned by members about decisions</li>
+          <li>Can be replaced if leadership is unfair</li>
+          <li>Cannot abuse authority</li>
+        </ul>
+      </div>
+    </section>
 
-<script>
-function showSection(id) {
-  const sections = document.querySelectorAll('section');
-  sections.forEach(section => section.classList.remove('active'));
-  const target = document.getElementById(id);
-  if (target) {
-    target.classList.add('active');
-  }
-}
+    <section id="bans" class="page-section">
+      <div class="card">
+        <h2>Bans & Appeals</h2>
+        <h3>Public Appeal Record</h3>
+        <p>These appeals are visible to everyone on the website only when they are manually added to the code.</p>
+        <ul id="appealLogs">
+          <li><strong>No public appeals yet.</strong> When an appeal is officially added to the website, it will appear here for everyone to see.</li>
+        </ul>
+      </div>
 
-let votes={yes:0,no:0};
-let hasVoted = localStorage.getItem('hasVoted') === 'true';
+      <div class="card">
+        <h3>Submit Appeal</h3>
+        <p><em>Instruction: After submitting your appeal, please screenshot it and send it directly to the current Group Chat Leader listed in the Hierarchy section.</em></p>
 
-function vote(v){
-  if (hasVoted) {
-    alert('You have already voted. Only one vote is allowed per device.');
-    return;
-  }
-  votes[v]++;
-  hasVoted = true;
-  localStorage.setItem('hasVoted', 'true');
-  document.getElementById('results').innerText = `Yes: ${votes.yes} | No: ${votes.no}`;
-} | No: ${votes.no}`;
-}
-</script>
+        <label for="appealName">Name</label>
+        <input id="appealName" type="text" placeholder="Name" />
 
+        <label for="appealDate">Date of Ban</label>
+        <input id="appealDate" type="date" />
+
+        <label for="appealDuration">How long is the ban?</label>
+        <input id="appealDuration" type="text" placeholder="Ban length" />
+
+        <label for="appealReason">Reason for appeal</label>
+        <textarea id="appealReason" placeholder="Why should the ban be reconsidered?"></textarea>
+
+        <button type="button" class="action-btn" id="submitAppealBtn">Submit Appeal</button>
+
+        <div id="appealPreview" class="appeal-preview" style="display:none;"></div>
+      </div>
+    </section>
+
+    <section id="vote" class="page-section">
+      <div class="card">
+        <h2>Vote to Replace Leader</h2>
+        <p>Should Pascal remain leader?</p>
+        <div class="vote-buttons">
+          <button type="button" class="action-btn" id="voteYesBtn">Yes</button>
+          <button type="button" class="action-btn" id="voteNoBtn">No</button>
+        </div>
+        <p id="results" class="appeal-preview" style="margin-top:14px;">Yes: 0 | No: 0</p>
+        <p class="muted">Only one vote is allowed per device/browser in this version.</p>
+      </div>
+    </section>
+
+    <section id="constitution" class="page-section">
+      <div class="card">
+        <h2>Constitution</h2>
+        <ol>
+          <li>All members of the Democratic Banana Republic are equal under the laws of the group chat.</li>
+          <li>The Group Chat Leader must act fairly and in the interest of the full group.</li>
+          <li>No member may be banned without reason.</li>
+          <li>All banned members have the right to submit an appeal.</li>
+          <li>The Group Chat Leader must review appeals fairly and explain major decisions.</li>
+          <li>Members have the right to question leadership decisions.</li>
+          <li>The Group Chat Leader may be replaced if leadership is determined to be unfair.</li>
+          <li>No authority in the Democratic Banana Republic may abuse power.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const navButtons = document.querySelectorAll('nav button');
+    const sections = document.querySelectorAll('.page-section');
+
+    function showSection(sectionId) {
+      sections.forEach(section => section.classList.remove('active'));
+      navButtons.forEach(button => button.classList.remove('active-nav'));
+
+      const targetSection = document.getElementById(sectionId);
+      const targetButton = document.querySelector(`nav button[data-section="${sectionId}"]`);
+
+      if (targetSection) targetSection.classList.add('active');
+      if (targetButton) targetButton.classList.add('active-nav');
+    }
+
+    navButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        showSection(this.dataset.section);
+      });
+    });
+
+    const voteStorageKey = 'dbr_vote_choice';
+    const savedVoteChoice = localStorage.getItem(voteStorageKey);
+    const voteYesBtn = document.getElementById('voteYesBtn');
+    const voteNoBtn = document.getElementById('voteNoBtn');
+    const resultsEl = document.getElementById('results');
+
+    let yesVotes = 0;
+    let noVotes = 0;
+
+    function updateVoteDisplay() {
+      if (savedVoteChoice === 'yes') yesVotes = 1;
+      if (savedVoteChoice === 'no') noVotes = 1;
+      resultsEl.textContent = `Yes: ${yesVotes} | No: ${noVotes}`;
+
+      if (savedVoteChoice) {
+        voteYesBtn.disabled = true;
+        voteNoBtn.disabled = true;
+      }
+    }
+
+    voteYesBtn.addEventListener('click', function () {
+      if (localStorage.getItem(voteStorageKey)) {
+        alert('You have already voted. Only one vote is allowed per device.');
+        return;
+      }
+      localStorage.setItem(voteStorageKey, 'yes');
+      yesVotes = 1;
+      noVotes = 0;
+      updateVoteDisplay();
+    });
+
+    voteNoBtn.addEventListener('click', function () {
+      if (localStorage.getItem(voteStorageKey)) {
+        alert('You have already voted. Only one vote is allowed per device.');
+        return;
+      }
+      localStorage.setItem(voteStorageKey, 'no');
+      yesVotes = 0;
+      noVotes = 1;
+      updateVoteDisplay();
+    });
+
+    updateVoteDisplay();
+
+    const submitAppealBtn = document.getElementById('submitAppealBtn');
+    const appealPreview = document.getElementById('appealPreview');
+
+    submitAppealBtn.addEventListener('click', function () {
+      const name = document.getElementById('appealName').value.trim();
+      const date = document.getElementById('appealDate').value.trim();
+      const duration = document.getElementById('appealDuration').value.trim();
+      const reason = document.getElementById('appealReason').value.trim();
+
+      if (!name || !date || !duration || !reason) {
+        alert('Please fill out all fields before submitting your appeal.');
+        return;
+      }
+
+      appealPreview.style.display = 'block';
+      appealPreview.textContent =
+        'Appeal Submitted\n\n' +
+        'Name: ' + name + '\n' +
+        'Date of Ban: ' + date + '\n' +
+        'Ban Length: ' + duration + '\n' +
+        'Reason for Appeal: ' + reason + '\n\n' +
+        'Now screenshot this and send it directly to the current Group Chat Leader.';
+    });
+  </script>
 </body>
 </html>
