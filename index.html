@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Democratic Banana Republic</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background: #f7c600;
+      color: #5a3a00;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background: #575757;
+    }
+
+    section {
+      padding: 40px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 10px 15px;
+      background: #f7c600;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #e6b800;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Democratic Banana Republic</h1>
+  <p>Official Group Chat Nation</p>
+</header>
+
+<nav>
+  <a href="#" onclick="showSection('home')">Home</a>
+  <a href="#" onclick="showSection('members')">Members</a>
+  <a href="#" onclick="showSection('hierarchy')">Hierarchy</a>
+  <a href="#" onclick="showSection('bans')">Bans & Appeals</a>
+</nav>
+
+<section id="home" class="active">
+  <h2>Welcome</h2>
+  <div class="card">
+    <p>Welcome to the official website of the Democratic Banana Republic 🍌</p>
+  </div>
+</section>
+
+<section id="members">
+  <h2>Members</h2>
+  <div class="card" id="memberList">
+    <p>No members added yet.</p>
+  </div>
+</section>
+
+<section id="hierarchy">
+  <h2>Hierarchy</h2>
+  <div class="card">
+    <p><strong>Group Chat Leader:</strong> TBD</p>
+    <p><strong>Members:</strong> Everyone else</p>
+  </div>
+</section>
+
+<section id="bans">
+  <h2>Bans & Appeals</h2>
+
+  <div class="card">
+    <h3>Banned List</h3>
+    <ul id="banList"></ul>
+  </div>
+
+  <div class="card">
+    <h3>Submit Appeal</h3>
+    <input type="text" id="name" placeholder="Name">
+    <input type="date" id="date">
+    <input type="text" id="duration" placeholder="Ban Duration">
+    <textarea id="reason" placeholder="Reason for Appeal"></textarea>
+    <button onclick="submitAppeal()">Submit Appeal</button>
+  </div>
+
+  <div class="card">
+    <h3>Appeal Logs</h3>
+    <ul id="appealLogs"></ul>
+  </div>
+</section>
+
+<script>
+  function showSection(sectionId) {
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(sectionId).classList.add('active');
+  }
+
+  function submitAppeal() {
+    const name = document.getElementById('name').value;
+    const date = document.getElementById('date').value;
+    const duration = document.getElementById('duration').value;
+    const reason = document.getElementById('reason').value;
+
+    const log = `${name} | ${date} | ${duration} | ${reason}`;
+
+    const li = document.createElement('li');
+    li.textContent = log;
+
+    document.getElementById('appealLogs').appendChild(li);
+
+    alert('Appeal submitted!');
+  }
+
+  // Example banned user
+  const bannedUsers = [
+    {name: 'ExampleUser', duration: '7 days'}
+  ];
+
+  const banList = document.getElementById('banList');
+  bannedUsers.forEach(user => {
+    const li = document.createElement('li');
+    li.textContent = `${user.name} - ${user.duration}`;
+    banList.appendChild(li);
+  });
+</script>
+
+</body>
+</html>
